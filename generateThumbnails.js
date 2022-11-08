@@ -29,7 +29,7 @@ for (const file of files) {
   // optimize self
   if (optimizeSelf && !path.parse(file).name.endsWith('thumb')) {
     sharp(filePath)
-      .resize(200)
+      .resize(100)
       .png(50)      
       .toFile(
         toPath +
