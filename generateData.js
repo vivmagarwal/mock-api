@@ -122,9 +122,7 @@ recipeCategories.forEach((item) => {
   database.recipeCategories.push({
     id: item.idCategory,
     name: item.strCategory,
-    image: `http://${config.get('host')}:${
-      config.get('port')
-    }/images/recipe-category/${item.strCategory.toLowerCase()}.png`,
+    image: `http://${config.get('host')}/images/recipe-category/${item.strCategory.toLowerCase()}.png`,
     description: item.strCategoryDescription,
     createdAt: Date.now(),
   });
@@ -141,9 +139,7 @@ ingredients.forEach((item) => {
   database.recipeIngredients.push({
     id: item.idIngredient,
     name: item.strIngredient,
-    image: encodeURI(`http://${config.get('host')}:${
-      config.get('port')
-    }/images/recipe-ingredient/${item.strIngredient}.png`),
+    image: encodeURI(`http://${config.get('host')}/images/recipe-ingredient/${item.strIngredient}.png`),
     description: item.strDescription,
     createdAt: Date.now(),
   });
