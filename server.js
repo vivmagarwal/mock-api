@@ -191,6 +191,6 @@ const HOST_TO_LISTEN = config.get('host-to-listen');
 
 server.listen(PORT, HOST_TO_LISTEN, () => {
   console.log(
-    `JSON Server is running at http://${HOST_TO_LISTEN}:${PORT}/`
+    `JSON Server is running...`
   );
 });
