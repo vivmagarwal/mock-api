@@ -1,0 +1,5 @@
+{
+  "host": "remote-host",
+  "port": "8080",
+  "db": "db-prod.json"
+}
