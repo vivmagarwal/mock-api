@@ -15,8 +15,8 @@ import path from "node:path";
 dotenv.config();
 
 // just change base path; then run node generateThumbnails.js
-const basePath = "public/images-raw/recipe-ingredient";
-const toPath = "public/images/recipe-ingredient"
+const basePath = "public/images-raw/meals";
+const toPath = "public/images/meals"
 const optimizeSelf = true;
 const generateThumb = false;
 
@@ -29,8 +29,8 @@ for (const file of files) {
   // optimize self
   if (optimizeSelf && !path.parse(file).name.endsWith('thumb')) {
     sharp(filePath)
-      .resize(100)
-      .png(50)      
+      .resize(400)
+      .jpeg(70)      
       .toFile(
         toPath +
           "/" +
