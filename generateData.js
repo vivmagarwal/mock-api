@@ -33,7 +33,7 @@ for (var i = 1; i <= 336; i++) {
     name: faker.name.firstName(),
     cost: roundToTwo(Math.random() * 100),
     likes: Math.round(Math.random() * 1000),
-    image: encodeURI(`http://${config.get('host')}images/cat/cat-unsplash-${i}.jpg`),
+    image: encodeURI(`http://${config.get('host')}/images/cat/cat-unsplash-${i}.jpg`),
     description: faker.lorem.paragraph(),
     breed: faker.animal.cat(),
     createdAt: Date.now(),
@@ -190,7 +190,7 @@ recipes.forEach((item) => {
 
 recipes.forEach((item) => {
   let filename = item.strMealThumb.split('/').pop().split('#')[0].split('?')[0];
-  let imgPath = encodeURI(`http://${config.get('host')}images/meals/${filename}`);
+  let imgPath = encodeURI(`http://${config.get('host')}/images/meals/${filename}`);
   let tagsArray = [];
 
   if (item.strTags) {
