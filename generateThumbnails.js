@@ -18,6 +18,7 @@ dotenv.config();
 const basePath = "public/images-raw/recipe-ingredient";
 const toPath = "public/images/recipe-ingredient"
 const optimizeSelf = true;
+const generateThumb = false;
 
 const files = await readdir(basePath);
 for (const file of files) {
@@ -28,8 +29,8 @@ for (const file of files) {
   // optimize self
   if (optimizeSelf && !path.parse(file).name.endsWith('thumb')) {
     sharp(filePath)
-      .resize(350)
-      .png(70)      
+      .resize(200)
+      .png(50)      
       .toFile(
         toPath +
           "/" +
@@ -46,7 +47,7 @@ for (const file of files) {
   }
 
   // generate thumb
-  if (!path.parse(file).name.endsWith('thumb') && !existsSync(perhapsThumbPath)) {
+  if (generateThumb && !path.parse(file).name.endsWith('thumb') && !existsSync(perhapsThumbPath)) {
     sharp(filePath)
       .resize(100, 100)
       .png(70) 
