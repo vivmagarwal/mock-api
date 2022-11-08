@@ -183,8 +183,14 @@ function generateAccessToken(user) {
 // };
 
 server.use(router);
-server.listen(config.get('port'), () => {
+
+
+const PORT = config.get('port');
+const HOST_TO_LISTEN = config.get('host-to-listen');
+
+
+server.listen(PORT, HOST_TO_LISTEN, () => {
   console.log(
-    `JSON Server is running at http://localhost:${config.get('port')}/`
+    `JSON Server is running at http://${HOST_TO_LISTEN}:${PORT}/`
   );
 });
